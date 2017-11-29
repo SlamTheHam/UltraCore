@@ -19,6 +19,8 @@ public class AdminMenu implements Listener {
 
 	private Plugin plugin = Main.getPlugin(Main.class);
 	
+	
+	
 	@SuppressWarnings("unused")
 	public void newInventory(Player player) {
 		Inventory adminmenu = plugin.getServer().createInventory(null, 54, ChatColor.DARK_GRAY + "Admin Menu - Page 1");
@@ -45,26 +47,178 @@ public class AdminMenu implements Listener {
 		ItemMeta emptyMeta = empty.getItemMeta();
 		emptyMeta.setDisplayName(" ");
 		empty.setItemMeta(emptyMeta);
+	    
+        ItemStack is1;
+        ItemMeta im1;
+       
+        if (plugin.getConfig().getString("Freeze.time").equals("true")) {
+            is1 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im1 = is1.getItemMeta();
+            im1.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore1.add(ChatColor.GREEN + "Click to toggle");
+            im1.setLore(togglelore1);
+            is1.setItemMeta(im1);
+        } else {
+            is1 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im1 = is1.getItemMeta();
+            im1.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore1.add(ChatColor.GREEN + "Click to toggle");
+            im1.setLore(togglelore1);
+            is1.setItemMeta(im1);
+        }
+        
+        ItemStack is2;
+        ItemMeta im2;
+       
+        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+            is2 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im2 = is2.getItemMeta();
+            im2.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore2.add(ChatColor.GREEN + "Click to toggle");
+            im2.setLore(togglelore2);
+            is2.setItemMeta(im2);
+        } else {
+            is2 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im2 = is2.getItemMeta();
+            im2.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore2.add(ChatColor.GREEN + "Click to toggle");
+            im2.setLore(togglelore2);
+            is2.setItemMeta(im2);
+        }
+        
+        ItemStack is3;
+        ItemMeta im3;
+       
+        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+            is3 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im3 = is3.getItemMeta();
+            im3.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore3.add(ChatColor.GREEN + "Click to toggle");
+            im3.setLore(togglelore3);
+            is3.setItemMeta(im3);
+        } else {
+            is3 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im3 = is3.getItemMeta();
+            im3.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore3.add(ChatColor.GREEN + "Click to toggle");
+            im3.setLore(togglelore3);
+            is3.setItemMeta(im3);
+        }
+        
+        ItemStack is4;
+        ItemMeta im4;
+       
+        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+            is4 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im4 = is3.getItemMeta();
+            im4.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore4.add(ChatColor.GREEN + "Click to toggle");
+            im4.setLore(togglelore4);
+            is4.setItemMeta(im4);
+        } else {
+            is4 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im4 = is4.getItemMeta();
+            im4.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore4.add(ChatColor.GREEN + "Click to toggle");
+            im4.setLore(togglelore4);
+            is4.setItemMeta(im4);
+        }
+        
+        ItemStack is5;
+        ItemMeta im5;
+       
+        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+            is5 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im5 = is5.getItemMeta();
+            im5.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore5.add(ChatColor.GREEN + "Click to toggle");
+            im5.setLore(togglelore5);
+            is5.setItemMeta(im5);
+        } else {
+            is5 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im5 = is5.getItemMeta();
+            im5.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore5.add(ChatColor.GREEN + "Click to toggle");
+            im5.setLore(togglelore5);
+            is5.setItemMeta(im5);
+        }
+        
+        ItemStack is6;
+        ItemMeta im6;
+       
+        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+            is6 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im6 = is6.getItemMeta();
+            im6.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore5.add(ChatColor.GREEN + "Click to toggle");
+            im6.setLore(togglelore5);
+            is6.setItemMeta(im2);
+        } else {
+            is6 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im6 = is6.getItemMeta();
+            im6.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore5.add(ChatColor.GREEN + "Click to toggle");
+            im6.setLore(togglelore5);
+            is6.setItemMeta(im2);
+        }
+        
+        ItemStack is7;
+        ItemMeta im7;
+       
+        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+            is7 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im7 = is7.getItemMeta();
+            im7.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore6.add(ChatColor.GREEN + "Click to toggle");
+            im7.setLore(togglelore6);
+            is7.setItemMeta(im7);
+        } else {
+            is7 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im7 = is7.getItemMeta();
+            im7.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore7.add(ChatColor.GREEN + "Click to toggle");
+            im7.setLore(togglelore7);
+            is7.setItemMeta(im7);
+        }
+        
+        ItemStack is8;
+        ItemMeta im8;
+       
+        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+            is8 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im8 = is8.getItemMeta();
+            im8.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore8.add(ChatColor.GREEN + "Click to toggle");
+            im8.setLore(togglelore8);
+            is8.setItemMeta(im8);
+        } else {
+            is8 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im8 = is2.getItemMeta();
+            im8.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore8.add(ChatColor.GREEN + "Click to toggle");
+            im8.setLore(togglelore8);
+            is8.setItemMeta(im8);
+        }
+        
+        ItemStack is9;
+        ItemMeta im9;
+       
+        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+            is9 = new ItemStack(Material.INK_SACK, 1, (short)10);
+            im9 = is9.getItemMeta();
+            im9.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            togglelore9.add(ChatColor.GREEN + "Click to toggle");
+            im9.setLore(togglelore9);
+            is9.setItemMeta(im9);
+        } else {
+            is9 = new ItemStack(Material.INK_SACK, 1, (short)8);
+            im9 = is9.getItemMeta();
+            im9.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            togglelore9.add(ChatColor.GREEN + "Click to toggle");
+            im9.setLore(togglelore9);
+            is9.setItemMeta(im9);
+        }
 		
-		
-		ItemStack toggleoffitem1 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleoffitem2 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleoffitem3 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleoffitem4 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleoffitem5 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleoffitem6 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleoffitem7 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleoffitem8 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleoffitem9 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 14);
-		ItemStack toggleonitem1 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
-		ItemStack toggleonitem2 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
-		ItemStack toggleonitem3 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
-		ItemStack toggleonitem4 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
-		ItemStack toggleonitem5 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
-		ItemStack toggleonitem6 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
-		ItemStack toggleonitem7 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
-		ItemStack toggleonitem8 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
-		ItemStack toggleonitem9 = new ItemStack(Material.STAINED_CLAY, 1, (byte) 5);
 		ItemStack close = new ItemStack(Material.BARRIER);
 		ItemStack nextpage = new ItemStack(Material.SIGN);
 		ItemStack previouspage = new ItemStack(Material.SIGN);
@@ -167,15 +321,15 @@ public class AdminMenu implements Listener {
 		adminmenu.setItem(30, chatformat1);
 		adminmenu.setItem(32, tablist1);
 		adminmenu.setItem(34, firstjoin1);
-		adminmenu.setItem(18, toggleoffitem1);
-		adminmenu.setItem(20, toggleoffitem2);
-		adminmenu.setItem(22, toggleoffitem3);
-		adminmenu.setItem(24, toggleoffitem4);
-		adminmenu.setItem(26, toggleoffitem5);
-		adminmenu.setItem(37, toggleoffitem6);
-		adminmenu.setItem(39, toggleoffitem7);
-		adminmenu.setItem(41, toggleoffitem8);
-		adminmenu.setItem(43, toggleoffitem9);
+		adminmenu.setItem(18, is1);
+		adminmenu.setItem(20, is2);
+		adminmenu.setItem(22, is3);
+		adminmenu.setItem(24, is4);
+		adminmenu.setItem(26, is5);
+		adminmenu.setItem(37, is6);
+		adminmenu.setItem(39, is7);
+		adminmenu.setItem(41, is8);
+		adminmenu.setItem(43, is9);
 				
 		player.openInventory(adminmenu);
 

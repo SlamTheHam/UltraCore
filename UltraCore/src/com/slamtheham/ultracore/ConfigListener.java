@@ -1,5 +1,12 @@
 package com.slamtheham.ultracore;
 
-public class ConfigListener {
+import org.bukkit.event.Listener;
 
+public class ConfigListener implements Listener{
+Main plugin;
+ 
+public ConfigListener(Main instance) {
+plugin = instance;
+}
+ 
 }

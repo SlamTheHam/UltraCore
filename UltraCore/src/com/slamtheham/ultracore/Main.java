@@ -1,5 +1,6 @@
 package com.slamtheham.ultracore;
 
+import java.io.File;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -7,6 +8,7 @@ import javax.swing.text.Document;
 import javax.swing.text.html.parser.Element;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,6 +17,9 @@ import net.md_5.bungee.api.ChatColor;
 public class Main extends JavaPlugin {
 	
 	private static Plugin plugin;
+	FileConfiguration config;
+	FileConfiguration messages;
+	File file;
 	
 	public void onEnable() {
 		plugin = this;	
@@ -25,7 +30,6 @@ public class Main extends JavaPlugin {
 	    Bukkit.getServer().getLogger().info(ChatColor.YELLOW + "██║   ██║██║     ██║   ██╔══██╗██╔══██║██║     ██║   ██║██╔══██╗██╔══╝  ");
 	    Bukkit.getServer().getLogger().info(ChatColor.YELLOW + "╚██████╔╝███████╗██║   ██║  ██║██║  ██║╚██████╗╚██████╔╝██║  ██║███████╗");
 	    Bukkit.getServer().getLogger().info(ChatColor.YELLOW + " ╚═════╝ ╚══════╝╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝");
-	    Bukkit.getServer().getLogger().info(ChatColor.YELLOW + "");
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "" + ChatColor.STRIKETHROUGH + "--------------------------------------------------");
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "166" + ChatColor.YELLOW + "Commands have been loaded");
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "205" + ChatColor.YELLOW + "Permissions have been loaded");
@@ -36,9 +40,12 @@ public class Main extends JavaPlugin {
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "" + ChatColor.STRIKETHROUGH + "--------------------------------------------------");
 	    Bukkit.getServer().getPluginManager().registerEvents(new Events(), this);
 		getCommand("core").setExecutor(new Core());
-		getConfig().options().copyDefaults(true);
-		saveConfig();
 		
+		final FileConfiguration config = this.getConfig();
+		config.addDefault("Freeze.time", "false");
+		config.addDefault("Freeze.weather", "false");
+		config.options().copyDefaults(true);
+		saveConfig();
 		
 	}
 	
@@ -51,7 +58,6 @@ public class Main extends JavaPlugin {
 	    Bukkit.getServer().getLogger().info(ChatColor.YELLOW + "██║   ██║██║     ██║   ██╔══██╗██╔══██║██║     ██║   ██║██╔══██╗██╔══╝  ");
 	    Bukkit.getServer().getLogger().info(ChatColor.YELLOW + "╚██████╔╝███████╗██║   ██║  ██║██║  ██║╚██████╗╚██████╔╝██║  ██║███████╗");
 	    Bukkit.getServer().getLogger().info(ChatColor.YELLOW + " ╚═════╝ ╚══════╝╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝");
-	    Bukkit.getServer().getLogger().info(ChatColor.YELLOW + "");
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "" + ChatColor.STRIKETHROUGH + "--------------------------------------------------");
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "166" + ChatColor.YELLOW + "Commands have been unloaded");
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "205" + ChatColor.YELLOW + "Permissions have been unloaded");
@@ -60,7 +66,6 @@ public class Main extends JavaPlugin {
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "Vault" + ChatColor.YELLOW + "has been unHooked");
 	    Bukkit.getServer().getLogger().info(ChatColor.GRAY + "[" + ChatColor.RED + "UltraCore v1" + ChatColor.GRAY + "]" + ChatColor.AQUA + " Has beeen unloaded and Disabled");
 	    Bukkit.getServer().getLogger().info(ChatColor.GREEN + "" + ChatColor.STRIKETHROUGH + "--------------------------------------------------");
-	    
 	    
 				
 	}
