@@ -1,0 +1,18 @@
+name: UltraCore
+main: com.slamtheham.ultracore.Main
+description: UltraCore a complete remake of the popular skript plugin UltimateEssentialsPro
+version: v1
+author: Developed by SlamTheHam
+
+commands:
+    core:
+        usage: /<command> <argument>
+        description: Main plugin command
+       
+permissions:
+    core.admin:
+        description: Gives permission to all admin commands
+        default: op
+    core.help:
+        description: Gives permission to help commands
+        default: op            
