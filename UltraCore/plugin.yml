@@ -6,13 +6,20 @@ author: Developed by SlamTheHam
 
 commands:
     core:
-        usage: /<command> <argument>
+        usage: /<command> <arg0>
         description: Main plugin command
-       
+        aliases: [uc, ucore, ultracore]
+    teleport:
+        usage: /<command> <arg0> <arg1>
+        description: Teleportation command
+        aliases: [tp, tpo]
 permissions:
     core.admin:
         description: Gives permission to all admin commands
         default: op
     core.help:
         description: Gives permission to help commands
-        default: op            
+        default: op  
+    core.tp:
+        description: Gives permmsion to all teleport commands
+        default: op              

@@ -51,17 +51,17 @@ public class AdminMenu implements Listener {
         ItemStack is1;
         ItemMeta im1;
        
-        if (plugin.getConfig().getString("Freeze.time").equals("true")) {
+        if (plugin.getConfig().getString("toggle.freezetime").equals("true")) {
             is1 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im1 = is1.getItemMeta();
-            im1.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im1.setDisplayName(ChatColor.YELLOW + "Toggled Freeze Time:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore1.add(ChatColor.GREEN + "Click to toggle");
             im1.setLore(togglelore1);
             is1.setItemMeta(im1);
         } else {
             is1 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im1 = is1.getItemMeta();
-            im1.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im1.setDisplayName(ChatColor.YELLOW + "Toggled Freeze Time:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore1.add(ChatColor.GREEN + "Click to toggle");
             im1.setLore(togglelore1);
             is1.setItemMeta(im1);
@@ -70,17 +70,17 @@ public class AdminMenu implements Listener {
         ItemStack is2;
         ItemMeta im2;
        
-        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+        if (plugin.getConfig().getString("toggle.noweather").equals("true")) {
             is2 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im2 = is2.getItemMeta();
-            im2.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im2.setDisplayName(ChatColor.YELLOW + "Toggled No Weather:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore2.add(ChatColor.GREEN + "Click to toggle");
             im2.setLore(togglelore2);
             is2.setItemMeta(im2);
         } else {
             is2 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im2 = is2.getItemMeta();
-            im2.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im2.setDisplayName(ChatColor.YELLOW + "Toggled No Weather:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore2.add(ChatColor.GREEN + "Click to toggle");
             im2.setLore(togglelore2);
             is2.setItemMeta(im2);
@@ -89,17 +89,17 @@ public class AdminMenu implements Listener {
         ItemStack is3;
         ItemMeta im3;
        
-        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+        if (plugin.getConfig().getString("toggle.nopvp").equals("true")) {
             is3 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im3 = is3.getItemMeta();
-            im3.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im3.setDisplayName(ChatColor.YELLOW + "Toggled No Pvp:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore3.add(ChatColor.GREEN + "Click to toggle");
             im3.setLore(togglelore3);
             is3.setItemMeta(im3);
         } else {
             is3 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im3 = is3.getItemMeta();
-            im3.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im3.setDisplayName(ChatColor.YELLOW + "Toggled No Pvp:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore3.add(ChatColor.GREEN + "Click to toggle");
             im3.setLore(togglelore3);
             is3.setItemMeta(im3);
@@ -108,17 +108,17 @@ public class AdminMenu implements Listener {
         ItemStack is4;
         ItemMeta im4;
        
-        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+        if (plugin.getConfig().getString("toggle.joinandleave").equals("true")) {
             is4 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im4 = is3.getItemMeta();
-            im4.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im4.setDisplayName(ChatColor.YELLOW + "Toggled Join & Leave Message:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore4.add(ChatColor.GREEN + "Click to toggle");
             im4.setLore(togglelore4);
             is4.setItemMeta(im4);
         } else {
             is4 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im4 = is4.getItemMeta();
-            im4.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im4.setDisplayName(ChatColor.YELLOW + "Toggled Join & Leave Message:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore4.add(ChatColor.GREEN + "Click to toggle");
             im4.setLore(togglelore4);
             is4.setItemMeta(im4);
@@ -127,17 +127,17 @@ public class AdminMenu implements Listener {
         ItemStack is5;
         ItemMeta im5;
        
-        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+        if (plugin.getConfig().getString("toggle.spawn").equals("true")) {
             is5 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im5 = is5.getItemMeta();
-            im5.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im5.setDisplayName(ChatColor.YELLOW + "Toggled Spawn on Join:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore5.add(ChatColor.GREEN + "Click to toggle");
             im5.setLore(togglelore5);
             is5.setItemMeta(im5);
         } else {
             is5 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im5 = is5.getItemMeta();
-            im5.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im5.setDisplayName(ChatColor.YELLOW + "Toggled Spawn on Join:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore5.add(ChatColor.GREEN + "Click to toggle");
             im5.setLore(togglelore5);
             is5.setItemMeta(im5);
@@ -146,17 +146,17 @@ public class AdminMenu implements Listener {
         ItemStack is6;
         ItemMeta im6;
        
-        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+        if (plugin.getConfig().getString("toggle.motd").equals("true")) {
             is6 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im6 = is6.getItemMeta();
-            im6.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im6.setDisplayName(ChatColor.YELLOW + "Toggled MOTD:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore5.add(ChatColor.GREEN + "Click to toggle");
             im6.setLore(togglelore5);
             is6.setItemMeta(im2);
         } else {
             is6 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im6 = is6.getItemMeta();
-            im6.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im6.setDisplayName(ChatColor.YELLOW + "Toggled MOTD:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore5.add(ChatColor.GREEN + "Click to toggle");
             im6.setLore(togglelore5);
             is6.setItemMeta(im2);
@@ -165,17 +165,17 @@ public class AdminMenu implements Listener {
         ItemStack is7;
         ItemMeta im7;
        
-        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+        if (plugin.getConfig().getString("toggle.chat").equals("true")) {
             is7 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im7 = is7.getItemMeta();
-            im7.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im7.setDisplayName(ChatColor.YELLOW + "Toggled Chat Format:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore6.add(ChatColor.GREEN + "Click to toggle");
             im7.setLore(togglelore6);
             is7.setItemMeta(im7);
         } else {
             is7 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im7 = is7.getItemMeta();
-            im7.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im7.setDisplayName(ChatColor.YELLOW + "Toggled Chat Format:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore7.add(ChatColor.GREEN + "Click to toggle");
             im7.setLore(togglelore7);
             is7.setItemMeta(im7);
@@ -184,17 +184,17 @@ public class AdminMenu implements Listener {
         ItemStack is8;
         ItemMeta im8;
        
-        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+        if (plugin.getConfig().getString("toggle.tablist").equals("true")) {
             is8 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im8 = is8.getItemMeta();
-            im8.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im8.setDisplayName(ChatColor.YELLOW + "Toggled Custom Tablist:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore8.add(ChatColor.GREEN + "Click to toggle");
             im8.setLore(togglelore8);
             is8.setItemMeta(im8);
         } else {
             is8 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im8 = is2.getItemMeta();
-            im8.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im8.setDisplayName(ChatColor.YELLOW + "Toggled Custom Tablist:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore8.add(ChatColor.GREEN + "Click to toggle");
             im8.setLore(togglelore8);
             is8.setItemMeta(im8);
@@ -203,17 +203,17 @@ public class AdminMenu implements Listener {
         ItemStack is9;
         ItemMeta im9;
        
-        if (plugin.getConfig().getString("Freeze.weather").equals("true")) {
+        if (plugin.getConfig().getString("toggle.firstjoinkit").equals("true")) {
             is9 = new ItemStack(Material.INK_SACK, 1, (short)10);
             im9 = is9.getItemMeta();
-            im9.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
+            im9.setDisplayName(ChatColor.YELLOW + "Toggled First Join Kit:" + ChatColor.GREEN + "" + ChatColor.BOLD + " ON");
             togglelore9.add(ChatColor.GREEN + "Click to toggle");
             im9.setLore(togglelore9);
             is9.setItemMeta(im9);
         } else {
             is9 = new ItemStack(Material.INK_SACK, 1, (short)8);
             im9 = is9.getItemMeta();
-            im9.setDisplayName(ChatColor.YELLOW + "Toggled:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
+            im9.setDisplayName(ChatColor.YELLOW + "Toggled First Join Kit:" + ChatColor.RED + "" + ChatColor.BOLD + " OFF");
             togglelore9.add(ChatColor.GREEN + "Click to toggle");
             im9.setLore(togglelore9);
             is9.setItemMeta(im9);
@@ -264,14 +264,13 @@ public class AdminMenu implements Listener {
 		lore2.add(" ");
 		lore2.add(ChatColor.GREEN + "" + ChatColor.BOLD + "ENABLE " + ChatColor.YELLOW + "/" + ChatColor.RED + "" + ChatColor.BOLD + " DISABLE");
 		lore3.add(ChatColor.YELLOW + "Toggle ingame Player vs Player");
-		lore2.add(ChatColor.YELLOW + "mechanic.");
+		lore3.add(ChatColor.YELLOW + "mechanic.");
 		lore3.add(ChatColor.AQUA + "Click the item below to toggle!");
 		lore3.add(" ");
 		lore3.add(ChatColor.GREEN + "" + ChatColor.BOLD + "ENABLE " + ChatColor.YELLOW + "/" + ChatColor.RED + "" + ChatColor.BOLD + " DISABLE");
 		lore4.add(ChatColor.YELLOW + "Enable/Disable custom join/leave");
 		lore4.add(ChatColor.YELLOW + "messages.");
-		lore4.add(ChatColor.DARK_GRAY + "TIP: You can edit these messages");
-		lore4.add(ChatColor.DARK_GRAY + "with messages.yml.");
+		lore4.add(ChatColor.DARK_GRAY + "TIP: You can edit these messages in messages.yml.");
 		lore4.add(ChatColor.AQUA + "Click the item below to toggle!");
 		lore4.add(" ");
 		lore4.add(ChatColor.GREEN + "" + ChatColor.BOLD + "ENABLE " + ChatColor.YELLOW + "/" + ChatColor.RED + "" + ChatColor.BOLD + " DISABLE");
@@ -281,16 +280,45 @@ public class AdminMenu implements Listener {
 		lore5.add(ChatColor.AQUA + "Click the item below to toggle!");
 		lore5.add(" ");
 		lore5.add(ChatColor.GREEN + "" + ChatColor.BOLD + "ENABLE " + ChatColor.YELLOW + "/" + ChatColor.RED + "" + ChatColor.BOLD + " DISABLE");
+		lore6.add(ChatColor.YELLOW + "Enable/Disable message of the day");
+		lore6.add(ChatColor.YELLOW + "when you join the server.");
+		lore6.add(ChatColor.DARK_GRAY + "TIP: You can change the motd in the config.yml");
+		lore6.add(ChatColor.AQUA + "Click the item below to toggle!");
+		lore6.add(" ");
+		lore6.add(ChatColor.GREEN + "" + ChatColor.BOLD + "ENABLE " + ChatColor.YELLOW + "/" + ChatColor.RED + "" + ChatColor.BOLD + " DISABLE");
+		lore7.add(ChatColor.YELLOW + "Enable/Disable the server chat format");
+		lore7.add(ChatColor.DARK_GRAY + "TIP: You can change the chat format in the config.yml");
+		lore7.add(ChatColor.AQUA + "Click the item below to toggle!");
+		lore7.add(" ");
+		lore7.add(ChatColor.GREEN + "" + ChatColor.BOLD + "ENABLE " + ChatColor.YELLOW + "/" + ChatColor.RED + "" + ChatColor.BOLD + " DISABLE");
+		lore8.add(ChatColor.YELLOW + "Enable/Disable custom tab list");
+		lore8.add(ChatColor.DARK_GRAY + "TIP: You can change the tablist in the config.yml");
+		lore8.add(ChatColor.AQUA + "Click the item below to toggle!");
+		lore8.add(" ");
+		lore8.add(ChatColor.GREEN + "" + ChatColor.BOLD + "ENABLE " + ChatColor.YELLOW + "/" + ChatColor.RED + "" + ChatColor.BOLD + " DISABLE");
+		lore9.add(ChatColor.YELLOW + "Enable/Disable first join kit");
+		lore9.add(ChatColor.YELLOW + "Left-Click to choose a kit.");
+		lore9.add(ChatColor.AQUA + "Click the item below to toggle!");
+		lore9.add(" ");
+		lore9.add(ChatColor.GREEN + "" + ChatColor.BOLD + "ENABLE " + ChatColor.YELLOW + "/" + ChatColor.RED + "" + ChatColor.BOLD + " DISABLE");
 		time1Meta.setLore(lore1);
 		now1Meta.setLore(lore2);
 		nop1Meta.setLore(lore3);
 		jl1Meta.setLore(lore4);
 		stp1Meta.setLore(lore5);
+		motd1Meta.setLore(lore6);
+		cf1Meta.setLore(lore7);
+		tab1Meta.setLore(lore8);
+		fj1Meta.setLore(lore9);
 		timefreeze1.setItemMeta(time1Meta);
 		noweather1.setItemMeta(now1Meta);
 		nopvp1.setItemMeta(nop1Meta);
 		joinleave1.setItemMeta(jl1Meta);
 		spawntp1.setItemMeta(stp1Meta);
+		motd1.setItemMeta(motd1Meta);
+		chatformat1.setItemMeta(cf1Meta);
+		tablist1.setItemMeta(tab1Meta);
+		firstjoin1.setItemMeta(fj1Meta);
 		close.setItemMeta(closeMeta);
 		nextpage.setItemMeta(npMeta);
 		
