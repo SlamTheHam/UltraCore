@@ -1,5 +1,8 @@
 package com.slamtheham.ultracore;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Effect;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.event.EventHandler;
@@ -238,6 +241,50 @@ public class Events implements Listener {
                     plugin.saveConfig();
                     adminmenu.newInventory(player);
    
+                }
+            }
+        }
+    }
+    @EventHandler
+	public void onInventoryClick1(InventoryClickEvent event) {
+		Player player = (Player) event.getWhoClicked();
+		ItemStack is = event.getCurrentItem();
+		if ((event.getCurrentItem() != null) && (event.getCurrentItem().getType() != Material.AIR)) {
+			if (event.getInventory().getName().equals(ChatColor.DARK_GRAY + "Teleport Menu - Page 1")) {
+				event.setCancelled(true);
+                for (int i = 0; i < Bukkit.getOnlinePlayers().size(); i++) {   
+                Player targetPlayer = (Player) Bukkit.getOnlinePlayers().toArray()[i];
+                Location location = player.getLocation();
+                if ((event.getCurrentItem().getType() == Material.SKULL_ITEM) && (is.hasItemMeta()) && (is.getItemMeta().getDisplayName().equals(ChatColor.YELLOW + "Teleport to " + ChatColor.GREEN + targetPlayer.getName()))) {
+                    player.closeInventory();
+                    player.teleport(targetPlayer);
+            		player.sendMessage(ChatColor.YELLOW + "You've teleported to " + ChatColor.GREEN + targetPlayer.getDisplayName() + ChatColor.YELLOW + "!");
+            		player.playSound(location, Sound.ENTITY_ENDERMEN_TELEPORT, 100, 1);
+            		player.playEffect(location, Effect.ENDER_SIGNAL, 1);
+            		targetPlayer.playEffect(location, Effect.ENDER_SIGNAL, 1);
+                }
+                }
+            }
+		}
+	}
+	@EventHandler
+	public void onInventoryClick2(InventoryClickEvent event) {
+		Player player = (Player) event.getWhoClicked();
+		ItemStack is = event.getCurrentItem();
+		if ((event.getCurrentItem() != null) && (event.getCurrentItem().getType() != Material.AIR)) {
+			if (event.getInventory().getName().equals(ChatColor.DARK_GRAY + "Teleport Here Menu - Page 1")) {
+				event.setCancelled(true);
+	            for (int i = 0; i < Bukkit.getOnlinePlayers().size(); i++) {   
+	                Player targetPlayer = (Player) Bukkit.getOnlinePlayers().toArray()[i];
+	                Location location = player.getLocation();
+	                if ((event.getCurrentItem().getType() == Material.SKULL_ITEM) && (is.hasItemMeta()) && (is.getItemMeta().getDisplayName().equals(ChatColor.YELLOW + "Teleport " + ChatColor.GREEN + targetPlayer.getName() + ChatColor.YELLOW + " to you."))) {
+	                    player.closeInventory();
+	                    targetPlayer.teleport(player);
+	            		player.sendMessage(ChatColor.YELLOW + "You've teleported " + ChatColor.GREEN + targetPlayer.getDisplayName() + ChatColor.YELLOW + " to you!");
+	            		player.playSound(location, Sound.ENTITY_ENDERMEN_TELEPORT, 100, 1);
+	            		player.playEffect(location, Effect.ENDER_SIGNAL, 1);
+	            		targetPlayer.playEffect(location, Effect.ENDER_SIGNAL, 1);	
+	                }
                 }
             }
         }

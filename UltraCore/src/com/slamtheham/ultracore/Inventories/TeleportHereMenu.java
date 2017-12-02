@@ -12,10 +12,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
-public class TeleportMenu implements Listener {
+public class TeleportHereMenu implements Listener {
 
 	public static void newInventory(CommandSender sender) {
-		Inventory tpmenu = Bukkit.createInventory(null, 54, ChatColor.DARK_GRAY + "Teleport Menu - Page 1");
+		Inventory tpheremenu = Bukkit.createInventory(null, 54, ChatColor.DARK_GRAY + "Teleport Here Menu - Page 1");
 		
 		ItemStack empty = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 15);
 		ItemMeta emptyMeta = empty.getItemMeta();
@@ -36,33 +36,34 @@ public class TeleportMenu implements Listener {
 	    	Player targetPlayer = (Player) Bukkit.getOnlinePlayers().toArray()[i];
 		    ItemStack skulls = new ItemStack(Material.SKULL_ITEM, 1,(byte) 3);
 		    SkullMeta skullsMeta = (SkullMeta) skulls.getItemMeta();
-		    skullsMeta.setDisplayName(ChatColor.YELLOW + "Teleport to " + ChatColor.GREEN + targetPlayer.getName());
+		    skullsMeta.setDisplayName(ChatColor.YELLOW + "Teleport " + ChatColor.GREEN + targetPlayer.getName() + ChatColor.YELLOW + " to you.");
 		    skullsMeta.setOwner(targetPlayer.getName());
 		    skulls.setItemMeta(skullsMeta);
 		    
 		    int beginningSlot = 9;
-		    tpmenu.setItem(i+beginningSlot, skulls);
+		    tpheremenu.setItem(i+beginningSlot, skulls);
 	    }
 	    
-		tpmenu.setItem(0, empty);
-		tpmenu.setItem(1, empty);
-		tpmenu.setItem(2, empty);
-		tpmenu.setItem(3, empty);
-		tpmenu.setItem(4, empty);
-		tpmenu.setItem(5, empty);
-		tpmenu.setItem(6, empty);
-		tpmenu.setItem(7, empty);
-		tpmenu.setItem(8, empty);
-		tpmenu.setItem(45, empty);
-		tpmenu.setItem(46, empty);
-		tpmenu.setItem(47, empty);
-		tpmenu.setItem(48, empty);
-		tpmenu.setItem(49, close);
-		tpmenu.setItem(50, empty);
-		tpmenu.setItem(51, empty);
-		tpmenu.setItem(52, empty);
-		tpmenu.setItem(53, nextpage);
+		tpheremenu.setItem(0, empty);
+		tpheremenu.setItem(1, empty);
+		tpheremenu.setItem(2, empty);
+		tpheremenu.setItem(3, empty);
+		tpheremenu.setItem(4, empty);
+		tpheremenu.setItem(5, empty);
+		tpheremenu.setItem(6, empty);
+		tpheremenu.setItem(7, empty);
+		tpheremenu.setItem(8, empty);
+		tpheremenu.setItem(45, empty);
+		tpheremenu.setItem(46, empty);
+		tpheremenu.setItem(47, empty);
+		tpheremenu.setItem(48, empty);
+		tpheremenu.setItem(49, close);
+		tpheremenu.setItem(50, empty);
+		tpheremenu.setItem(51, empty);
+		tpheremenu.setItem(52, empty);
+		tpheremenu.setItem(53, nextpage);
 		
-		((HumanEntity) sender).openInventory(tpmenu);
+		((HumanEntity) sender).openInventory(tpheremenu);
     }
 }
+

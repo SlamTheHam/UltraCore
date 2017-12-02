@@ -15,6 +15,13 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.slamtheham.ultracore.Commands.Core;
+import com.slamtheham.ultracore.Commands.TP;
+import com.slamtheham.ultracore.Commands.TPO;
+import com.slamtheham.ultracore.Commands.Teleport;
+import com.slamtheham.ultracore.Commands.Tpa;
+import com.slamtheham.ultracore.Commands.Tphere;
+import com.slamtheham.ultracore.Commands.Tppos;
 import com.slamtheham.ultracore.Inventories.AdminMenu;
 import com.slamtheham.ultracore.Inventories.TeleportMenu;
 
@@ -50,6 +57,13 @@ public class Main extends JavaPlugin {
 	    getServer().getPluginManager().registerEvents(new AdminMenu(), this);
 		getCommand("core").setExecutor(new Core());
 		getCommand("teleport").setExecutor(new Teleport());
+		getCommand("tp").setExecutor(new TP());
+		getCommand("tpo").setExecutor(new TPO());
+		getCommand("tppos").setExecutor(new Tppos());
+		getCommand("tphere").setExecutor(new Tphere());
+		getCommand("tpa").setExecutor(new Tpa());
+		getCommand("tpaccept").setExecutor(new Tpa());
+		getCommand("tpdeny").setExecutor(new Tpa());
 		File f = new File("plugins/UltraCore/", "messages.yml");
 		FileConfiguration cfg = YamlConfiguration.loadConfiguration(f);
 		cfg.set("this.is.the.file.structure", "this_is_the_string");

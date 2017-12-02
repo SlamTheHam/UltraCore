@@ -8,11 +8,30 @@ commands:
     core:
         usage: /<command> <arg0>
         description: Main plugin command
-        aliases: [uc, ucore, ultracore]
     teleport:
         usage: /<command> <arg0> <arg1>
         description: Teleportation command
-        aliases: [tp, tpo]
+    tp:
+        usage: /<command> <arg0> <arg1>
+        description: Teleportation command
+    tpo:
+        usage: /<command> <arg0> <arg1>
+        description: Teleportation command  
+    tppos:
+        usage: /<command> <arg0> <arg1> <arg2>
+        description: Teleportation command  
+    tphere:
+        usage: /<command> <arg0>
+        description: Teleportation command
+    tpa:
+        usage: /<command> <arg0>
+        description: Teleportation command  
+    tpaccept:
+        usage: /<command>
+        description: Teleportation command  
+    tpdeny:
+        usage: /<command>
+        description: Teleportation command                                  
 permissions:
     core.admin:
         description: Gives permission to all admin commands
