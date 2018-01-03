@@ -31,7 +31,13 @@ commands:
         description: Teleportation command  
     tpdeny:
         usage: /<command>
-        description: Teleportation command                                  
+        description: Teleportation command 
+    setspawn:
+        usage: /<command>
+        description: Teleportation command 
+    spawn:
+        usage: /<command>
+        description: Teleportation command                                                  
 permissions:
     core.admin:
         description: Gives permission to all admin commands
