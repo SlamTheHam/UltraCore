@@ -1,4 +1,4 @@
-package com.slamtheham.ultracore.Commands;
+package com.slamtheham.ultracore.commands;
 
 import org.bukkit.Effect;
 import org.bukkit.Location;

@@ -1,4 +1,4 @@
-package com.slamtheham.ultracore.Commands;
+package com.slamtheham.ultracore.commands;
 
 import java.util.HashMap;
 

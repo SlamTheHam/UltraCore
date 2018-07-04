@@ -1,4 +1,4 @@
-package com.slamtheham.ultracore.Commands;
+package com.slamtheham.ultracore.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
@@ -12,8 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import com.slamtheham.ultracore.Main;
-import com.slamtheham.ultracore.Inventories.TeleportHereMenu;
-import com.slamtheham.ultracore.Inventories.TeleportMenu;
+import com.slamtheham.ultracore.inventories.TeleportMenu;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
