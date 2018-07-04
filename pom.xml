@@ -45,9 +45,11 @@
                 </executions>
             </plugin>
         </plugins>
+        <sourceDirectory>src/main/java/</sourceDirectory>
         <resources>
             <resource>
-                <directory>/src/main/resources</directory>
+                <targetPath>.</targetPath>
+                <directory>${basedir}/src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>

@@ -1,8 +1,8 @@
 name: UltraCore
 main: com.slamtheham.ultracore.Main
 description: UltraCore a complete remake of the popular skript plugin UltimateEssentialsPro
-version: v1
-author: Developed by SlamTheHam
+version: ${project.version}
+authors: [SlamTheHam, Draww]
 
 commands:
     core:
