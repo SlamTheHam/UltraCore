@@ -5,6 +5,7 @@ import com.slamtheham.ultracore.commands.MainCommand;
 import com.slamtheham.ultracore.config.Config;
 import com.slamtheham.ultracore.config.Configs;
 import com.slamtheham.ultracore.listener.ListenerManager;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -24,6 +25,10 @@ public class Main extends JavaPlugin {
         setupListeners();
         setupCommandManager();
         setupConfigs();
+    }
+
+    public void reload() {
+
     }
 
     public void setupConfigs() {
