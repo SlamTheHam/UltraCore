@@ -48,7 +48,7 @@ public class MainCommand extends BaseCommand {
                         .create();
         sender.spigot().sendMessage(component3);
         BaseComponent[] component4 =
-                new ComponentBuilder(cc("&a/" + label + " ver/version &e- Sends help message"))
+                new ComponentBuilder(cc("&a/" + label + " ver/version &e- Sends version message"))
                         .event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/" + label + " ver"))
                         .event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Click to autofill command").create()))
                         .create();
@@ -98,6 +98,13 @@ public class MainCommand extends BaseCommand {
         processTime.run();
         sender.sendMessage(cc("&eYou have reloaded the plugin and all configuration files"));
         sender.sendMessage(cc("&eAll systems reloaded in &a" + processTime.getTime() + "ms"));
+    }
+
+    @Subcommand("update")
+    @Syntax("")
+    @CommandPermission("ultracore.admin")
+    public void onUpdate(CommandSender sender) {
+        //TODO: UPDATE CONTROL
     }
 
 
