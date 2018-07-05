@@ -86,8 +86,8 @@ public class ListenerManager {
     }
 
     public ListenerManager restart() {
-        listenerMap.values().forEach(HandlerList::unregisterAll);
-        listenerMap.clear();
+        unregisterAll();
+        registerAll();
         return this;
     }
 

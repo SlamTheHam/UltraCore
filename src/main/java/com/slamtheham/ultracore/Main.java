@@ -29,6 +29,7 @@ public class Main extends JavaPlugin {
 
     public void reload() {
         configs.reloadAll();
+        listenerManager.restart();
     }
 
     public void setupConfigs() {
