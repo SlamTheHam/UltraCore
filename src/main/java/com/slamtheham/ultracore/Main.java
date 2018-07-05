@@ -28,7 +28,7 @@ public class Main extends JavaPlugin {
     }
 
     public void reload() {
-
+        configs.reloadAll();
     }
 
     public void setupConfigs() {

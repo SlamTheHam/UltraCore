@@ -83,4 +83,24 @@ public class Config {
     public ConfigurationSection getConfigurationSection(String path) {
         return this.getConfig().getConfigurationSection(path);
     }
+
+    public File getConfigFile() {
+        return configFile;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public JavaPlugin getPlugin() {
+        return plugin;
+    }
+
+    public boolean isShouldCopy() {
+        return shouldCopy;
+    }
+
+    public FileConfiguration getFileConfiguration() {
+        return fileConfiguration;
+    }
 }

@@ -2,7 +2,9 @@ package com.slamtheham.ultracore.config;
 
 import com.slamtheham.ultracore.Main;
 
+import java.io.File;
 import java.util.HashMap;
+import java.util.stream.Stream;
 
 public class Configs {
 
@@ -23,10 +25,17 @@ public class Configs {
     }
 
     public Config remove(String name) {
-        if (has(name)) {
-            return getConfigHashMap().remove(name);
-        }
-        return null;
+        if (has(name)) return null;
+        return getConfigHashMap().remove(name);
+    }
+
+    public void reloadAll() {
+        configHashMap.values().forEach(Config::load);
+    }
+
+    public void reload(String name) {
+        if (!has(name)) return;
+        get(name).load();
     }
 
     public Boolean has(String name) {
