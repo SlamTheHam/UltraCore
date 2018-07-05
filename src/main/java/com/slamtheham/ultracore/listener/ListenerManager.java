@@ -86,6 +86,7 @@ public class ListenerManager {
     }
 
     public ListenerManager restart() {
+        if (listenerMap.values().size() < 1) return this;
         unregisterAll();
         registerAll();
         return this;
