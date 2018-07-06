@@ -95,7 +95,7 @@
         <dependency>
             <groupId>com.github.Personinblack</groupId>
             <artifactId>black</artifactId>
-            <version>4.0.0-alpha</version>
+            <version>4.1.0-alpha</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
