@@ -5,7 +5,10 @@ import com.slamtheham.ultracore.commands.MainCommand;
 import com.slamtheham.ultracore.config.Config;
 import com.slamtheham.ultracore.config.Configs;
 import com.slamtheham.ultracore.listener.ListenerManager;
+import com.slamtheham.ultracore.menu.AdminMenu;
+import com.slamtheham.ultracore.menu.MenuList;
 import com.slamtheham.ultracore.utils.Updater;
+import me.blackness.black.Blackness;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -16,6 +19,7 @@ public class Main extends JavaPlugin {
     private ListenerManager listenerManager;
     private Configs configs;
     private Updater updater;
+    private MenuList menuList;
 
     @SuppressWarnings("unused")
     public void onEnable() {
@@ -24,6 +28,9 @@ public class Main extends JavaPlugin {
         commandManager = new BukkitCommandManager(this);
         configs = new Configs(this);
         updater = new Updater(this);
+        new Blackness().prepareFor(this);
+        menuList = new MenuList(this);
+        setupMenu();
         setupListeners();
         setupCommandManager();
         setupConfigs();
@@ -31,7 +38,6 @@ public class Main extends JavaPlugin {
 
     public void reload() {
         configs.reloadAll();
-        listenerManager.restart();
     }
 
     public void setupConfigs() {
@@ -45,6 +51,10 @@ public class Main extends JavaPlugin {
 
     public void setupListeners() {
 
+    }
+
+    public void setupMenu() {
+        menuList.add("admin", new AdminMenu());
     }
 
     public void onDisable() {
@@ -77,5 +87,9 @@ public class Main extends JavaPlugin {
 
     public Updater getUpdater() {
         return updater;
+    }
+
+    public MenuList getMenuList() {
+        return menuList;
     }
 }
