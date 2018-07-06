@@ -5,6 +5,7 @@ import com.slamtheham.ultracore.commands.MainCommand;
 import com.slamtheham.ultracore.config.Config;
 import com.slamtheham.ultracore.config.Configs;
 import com.slamtheham.ultracore.listener.ListenerManager;
+import com.slamtheham.ultracore.utils.Updater;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -14,6 +15,7 @@ public class Main extends JavaPlugin {
     private BukkitCommandManager commandManager;
     private ListenerManager listenerManager;
     private Configs configs;
+    private Updater updater;
 
     @SuppressWarnings("unused")
     public void onEnable() {
@@ -21,6 +23,7 @@ public class Main extends JavaPlugin {
         listenerManager = new ListenerManager(this);
         commandManager = new BukkitCommandManager(this);
         configs = new Configs(this);
+        updater = new Updater(this);
         setupListeners();
         setupCommandManager();
         setupConfigs();
@@ -70,5 +73,9 @@ public class Main extends JavaPlugin {
 
     public ListenerManager getListenerManager() {
         return listenerManager;
+    }
+
+    public Updater getUpdater() {
+        return updater;
     }
 }

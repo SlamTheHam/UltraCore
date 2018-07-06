@@ -4,6 +4,7 @@ import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
 import com.slamtheham.ultracore.Main;
 import com.slamtheham.ultracore.utils.ProcessTime;
+import com.slamtheham.ultracore.utils.Updater;
 import net.md_5.bungee.api.chat.*;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -104,7 +105,18 @@ public class MainCommand extends BaseCommand {
     @Syntax("")
     @CommandPermission("ultracore.admin")
     public void onUpdate(CommandSender sender) {
-        //TODO: UPDATE CONTROL
+        Updater updater = Main.getInstance().getUpdater();
+        updater.check();
+        if (updater.available()) {
+            sender.sendMessage(cc("&a&m--------------------------------------------------"));
+            sender.sendMessage(cc("&eUltraCore not up to date!"));
+            sender.sendMessage(cc("&eCurrent version: &a" + updater.getNowVersion()));
+            sender.sendMessage(cc("&eAvailable latest version: &a" + updater.getLatestVersion()));
+            sender.sendMessage(cc("&eDownload Link: &a" + updater.getDownloadURL()));
+            sender.sendMessage(cc("&a&m--------------------------------------------------"));
+        } else {
+            sender.sendMessage(cc("&eNo new updates!"));
+        }
     }
 
 
