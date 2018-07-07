@@ -6,6 +6,8 @@ public interface UltraMenu {
 
     void init(Player player);
 
-    void close(Player player);
+    default void close(Player player){
+        player.closeInventory();
+    }
 
 }
