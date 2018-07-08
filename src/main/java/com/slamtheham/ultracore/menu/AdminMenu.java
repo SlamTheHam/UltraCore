@@ -22,7 +22,7 @@ public class AdminMenu extends UltraMenu {
         addElement(0, new BasicElement(new ItemManager.ItemCreator(Material.BREWING_STAND_ITEM).setName(cc("&aConfig Settings")).build(),
                 new BasicTarget(e -> {
                     e.cancel();
-                    new ConfigSettingsMenu(e.player()).showToAll(Bukkit.getOnlinePlayers().toArray(new Player[0]));
+                    new ConfigSettingsMenu(e.player()).showTo(e.player());
                 })
         ));
         buildChest();
