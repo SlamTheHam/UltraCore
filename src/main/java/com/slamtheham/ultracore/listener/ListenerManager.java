@@ -25,6 +25,7 @@ public class ListenerManager {
 
     public ListenerManager(Main plugin) {
         this.plugin = plugin;
+        listenerMap = new HashMap<>();
     }
 
     public ListenerManager add(Listener listener) {
