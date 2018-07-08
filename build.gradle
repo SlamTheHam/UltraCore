@@ -34,7 +34,7 @@ shadowJar {
 
 dependencies {
     compile group: 'co.aikar', name: 'acf-bukkit', version:'0.5.0-SNAPSHOT'
-    compile group: 'com.github.Personinblack', name: 'black', version:'4.1.0-alpha'
+    compile group: 'com.github.Personinblack', name: 'observer', version: 'bfb66b7c69'
     testCompile group: 'org.mockito', name: 'mockito-all', version:'1.10.19'
     testCompile group: 'org.powermock', name: 'powermock-module-junit4', version:'1.7.4'
     testCompile group: 'org.powermock', name: 'powermock-api-mockito', version:'1.7.4'
