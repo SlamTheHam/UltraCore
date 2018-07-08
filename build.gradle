@@ -1,0 +1,44 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "2.0.4"
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.slamtheham'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    maven { url = "https://hub.spigotmc.org/nexus/content/groups/public/" }
+    maven { url = "https://repo.aikar.co/content/groups/aikar/" }
+    maven { url = "https://jitpack.io" }
+    maven { url = "http://repo.maven.apache.org/maven2" }
+    mavenCentral()
+    mavenLocal()
+}
+
+compileJava {
+    options.compilerArgs += ["-parameters"]
+    options.forkOptions.executable = 'javac'
+    options.encoding = 'UTF-8'
+}
+
+shadowJar {
+    baseName = 'ultracore'
+    classifier = null
+    relocate 'co.aikar.commands', 'com.slamtheham.ultracore.acf'
+}
+
+dependencies {
+    compile group: 'co.aikar', name: 'acf-bukkit', version:'0.5.0-SNAPSHOT'
+    compile group: 'com.github.Personinblack', name: 'black', version:'4.1.0-alpha'
+    testCompile group: 'org.mockito', name: 'mockito-all', version:'1.10.19'
+    testCompile group: 'org.powermock', name: 'powermock-module-junit4', version:'1.7.4'
+    testCompile group: 'org.powermock', name: 'powermock-api-mockito', version:'1.7.4'
+    compileOnly group: 'org.spigotmc', name: 'spigot-api', version:'1.12.2-R0.1-SNAPSHOT'
+}
+
+build.dependsOn shadowJar
