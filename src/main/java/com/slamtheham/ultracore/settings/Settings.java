@@ -8,12 +8,13 @@ import me.blackness.black.element.BasicElement;
 import me.blackness.black.event.ElementClickEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static com.slamtheham.ultracore.utils.StringUtils.*;
 
 public class Settings {
 
@@ -36,9 +37,9 @@ public class Settings {
                     }
             ).elementHandler((player, setting) ->
                     new BasicElement(setting.getSettingItemHandler().get(player, setting),
-                            setting.getSettingClickHandler().get())
+                            setting.getSettingClickHandler().get(player, setting).get())
             ).itemHandler((player, setting) ->
-                    new ItemManager.ItemCreator(Material.PAPER).setName("&3&lDISABLE PVP").build()
+                    new ItemManager.ItemCreator(Material.PAPER).setName(cc("&3&lDISABLE PVP")).build()
             ).build();
 
     public static List<Setting> values() {
