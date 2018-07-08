@@ -1,10 +1,11 @@
 package com.slamtheham.ultracore.settings;
 
 import com.slamtheham.ultracore.Main;
+import com.slamtheham.ultracore.settings.handlers.BasicSettingElementHandler;
+import com.slamtheham.ultracore.settings.handlers.BasicSettingItemHandler;
 import com.slamtheham.ultracore.settings.handlers.BooleanClickHandler;
 import com.slamtheham.ultracore.settings.listeners.PvpListener;
 import com.slamtheham.ultracore.utils.ItemManager;
-import me.blackness.black.element.BasicElement;
 import me.blackness.black.event.ElementClickEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -35,11 +36,9 @@ public class Settings {
                             }
                         }
                     }
-            ).elementHandler((player, setting) ->
-                    new BasicElement(setting.getSettingItemHandler().get(player, setting),
-                            setting.getSettingClickHandler().get(player, setting).get())
-            ).itemHandler((player, setting) ->
-                    new ItemManager.ItemCreator(Material.PAPER).setName(cc("&3&lDISABLE PVP")).build()
+            ).elementHandler(new BasicSettingElementHandler()
+            ).itemHandler(new BasicSettingItemHandler(
+                    new ItemManager.ItemCreator(Material.PAPER).setName(cc("&3&lDISABLE PVP")).build())
             ).build();
 
     public static List<Setting> values() {
