@@ -1,4 +1,4 @@
-package com.slamtheham.ultracore.listener;
+package com.slamtheham.ultracore.settings.listeners;
 
 import com.slamtheham.ultracore.Main;
 import org.bukkit.entity.Entity;
@@ -8,11 +8,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
-public class PlayerListener implements Listener {
+public class PvpListener implements Listener {
 
     private Main plugin;
 
-    public PlayerListener() {
+    public PvpListener() {
         this.plugin = Main.getInstance();
     }
 
@@ -28,7 +28,7 @@ public class PlayerListener implements Listener {
         if (damager instanceof Player) {
             hitter = (Player) damager;
         } else if (damager instanceof Projectile) {
-            if (((Projectile)damager).getShooter() instanceof Player) {
+            if (((Projectile) damager).getShooter() instanceof Player) {
                 arrow = (Projectile) damager;
             }
         }
