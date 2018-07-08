@@ -5,6 +5,7 @@ import com.slamtheham.ultracore.commands.MainCommand;
 import com.slamtheham.ultracore.config.Config;
 import com.slamtheham.ultracore.config.Configs;
 import com.slamtheham.ultracore.listener.ListenerManager;
+import com.slamtheham.ultracore.listener.PlayerListener;
 import com.slamtheham.ultracore.menu.AdminMenu;
 import com.slamtheham.ultracore.menu.MenuList;
 import com.slamtheham.ultracore.utils.Updater;
@@ -50,7 +51,9 @@ public class Main extends JavaPlugin {
     }
 
     public void setupListeners() {
-
+        listenerManager.addAll(
+                new PlayerListener()
+        );
     }
 
     public void setupMenu() {
