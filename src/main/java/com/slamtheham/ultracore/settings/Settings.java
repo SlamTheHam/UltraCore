@@ -38,8 +38,7 @@ public class Settings {
                     }
             ).elementHandler(new BasicSettingElementHandler()
             ).itemHandler(new BasicSettingItemHandler(
-                    new ItemManager.ItemCreator(Material.PAPER).setName(cc("&3&lDISABLE PVP")).build())
-            ).build();
+                    new ItemManager.ItemCreator(Material.PAPER).setName(cc("&3&lDISABLE PVP")).build())).build();
 
     public static List<Setting> values() {
         return Arrays.stream(Settings.class.getFields()).map(field -> {
