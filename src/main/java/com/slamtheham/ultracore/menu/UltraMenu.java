@@ -4,6 +4,8 @@ import me.blackness.black.Element;
 import me.blackness.black.Page;
 import me.blackness.black.Pane;
 import me.blackness.black.page.ChestPage;
+import me.blackness.black.page.SynchronizedPage;
+import me.blackness.black.page.TSafePage;
 import me.blackness.observer.Target;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryInteractEvent;
@@ -111,9 +113,14 @@ public abstract class UltraMenu {
         return page;
     }
 
+    public Page buildSafeChest() {
+        page = new TSafePage(buildChest());
+        return page;
+    }
+
     public Page buildSyncChest() {
-        //TODO: syncChest
-        return null;
+        page = new SynchronizedPage(((ChestPage)buildChest()));
+        return page;
     }
 
     public void showTo(Player player) {

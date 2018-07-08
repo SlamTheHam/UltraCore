@@ -18,7 +18,7 @@ public class ConfigSettingsMenu extends UltraMenu {
         addPane(new BasicPane(0, 0, 6, 9));
         //test
         addElement(0, new BasicElement(new ItemStack(Material.APPLE)));
-        buildChest();
+        buildSyncChest();
     }
 
 }
