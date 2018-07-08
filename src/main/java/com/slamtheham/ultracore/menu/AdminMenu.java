@@ -24,6 +24,7 @@ public class AdminMenu extends UltraMenu {
                     new ConfigSettingsMenu(e.player()).showTo(e.player());
                 })
         ));
+        buildChest();
     }
 
 }
