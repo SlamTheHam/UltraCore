@@ -1,44 +1,32 @@
 package com.slamtheham.ultracore.settings;
 
 import com.slamtheham.ultracore.menu.ClickHandler;
-import com.slamtheham.ultracore.utils.ItemManager;
+import com.slamtheham.ultracore.settings.handlers.SettingElementHandler;
+import com.slamtheham.ultracore.settings.handlers.SettingItemHandler;
 import me.blackness.black.Element;
-import me.blackness.black.element.BasicElement;
-import me.blackness.black.target.BasicTarget;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 import java.util.Optional;
 
-import static com.slamtheham.ultracore.utils.StringUtils.cc;
-
 public class Setting implements Comparable<Setting> {
 
     private final String id;
-    private final String name;
-    private final Material icon;
     private final Listener listener;
     private final ClickHandler clickHandler;
+    private final SettingElementHandler settingElementHandler;
+    private final SettingItemHandler settingItemHandler;
 
-    public Setting(String id, String name, Material icon, Listener listener, ClickHandler clickHandler) {
+    public Setting(String id, Listener listener, ClickHandler clickHandler, SettingElementHandler settingElementHandler, SettingItemHandler settingItemHandler) {
         this.id = id;
-        this.name = name;
-        this.icon = icon;
         this.listener = listener;
         this.clickHandler = clickHandler;
+        this.settingElementHandler = settingElementHandler;
+        this.settingItemHandler = settingItemHandler;
     }
 
     public String getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Material getIcon() {
-        return icon;
     }
 
     public Optional<Listener> getListener() {
@@ -49,8 +37,16 @@ public class Setting implements Comparable<Setting> {
         return clickHandler;
     }
 
+    public SettingElementHandler getSettingElementHandler() {
+        return settingElementHandler;
+    }
+
+    public SettingItemHandler getSettingItemHandler() {
+        return settingItemHandler;
+    }
+
     public Element toElement(Player player) {
-        return new BasicElement(new ItemManager.ItemCreator(icon).setName(cc(name)).build(), new BasicTarget(clickHandler::run));
+        return settingElementHandler.get(player, this);
     }
 
     @Override
@@ -77,7 +73,7 @@ public class Setting implements Comparable<Setting> {
 
     @Override
     public String toString() {
-        return "Setting [id=" + id + ", icon=" + icon + ", listener=" + listener + ", clickHandler=" + clickHandler + "]";
+        return "Setting [id=" + id + ", listener=" + listener + ", clickHandler=" + clickHandler + ", elementHandler=" + settingElementHandler + ", itemHandler=" + settingItemHandler + "]";
     }
 
     @Override

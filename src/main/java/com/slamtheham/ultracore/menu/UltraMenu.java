@@ -108,6 +108,10 @@ public abstract class UltraMenu {
         panes.add(pane);
     }
 
+    public void addPanes(Pane... panes) {
+        this.panes.addAll(Arrays.asList(panes));
+    }
+
     public void removePane(Integer id) {
         panes.remove(id);
     }

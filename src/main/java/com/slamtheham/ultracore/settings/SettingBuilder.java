@@ -1,29 +1,20 @@
 package com.slamtheham.ultracore.settings;
 
 import com.slamtheham.ultracore.menu.ClickHandler;
-import org.bukkit.Material;
+import com.slamtheham.ultracore.settings.handlers.SettingElementHandler;
+import com.slamtheham.ultracore.settings.handlers.SettingItemHandler;
 import org.bukkit.event.Listener;
 
 public class SettingBuilder {
 
     private String id;
-    private String name;
-    private Material icon = Material.PAPER;
     private Listener listener;
     private ClickHandler clickHandler;
+    private SettingElementHandler settingElementHandler;
+    private SettingItemHandler settingItemHandler;
 
     public SettingBuilder id(String id) {
         this.id = id;
-        return this;
-    }
-
-    public SettingBuilder name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public SettingBuilder icon(Material icon) {
-        this.icon = icon;
         return this;
     }
 
@@ -32,15 +23,24 @@ public class SettingBuilder {
         return this;
     }
 
-    public SettingBuilder click(ClickHandler clickHandler) {
+    public SettingBuilder clickHandler(ClickHandler clickHandler) {
         this.clickHandler = clickHandler;
         return this;
     }
 
+    public SettingBuilder elementHandler(SettingElementHandler settingElementHandler) {
+        this.settingElementHandler = settingElementHandler;
+        return this;
+    }
+
+    public SettingBuilder itemHandler(SettingItemHandler settingItemHandler) {
+        this.settingItemHandler = settingItemHandler;
+        return this;
+    }
+
     public Setting build() {
-        if (id == null) return null;
-        if (name == null) name = id;
-        return new Setting(id, name, icon, listener, clickHandler);
+        if (id == null || settingElementHandler == null || settingItemHandler == null) return null;
+        return new Setting(id, listener, clickHandler, settingElementHandler, settingItemHandler);
     }
 
 }
