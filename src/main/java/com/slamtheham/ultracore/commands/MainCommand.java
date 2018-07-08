@@ -7,6 +7,7 @@ import com.slamtheham.ultracore.menu.AdminMenu;
 import com.slamtheham.ultracore.utils.ProcessTime;
 import com.slamtheham.ultracore.utils.Updater;
 import net.md_5.bungee.api.chat.*;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -74,8 +75,7 @@ public class MainCommand extends BaseCommand {
     @Syntax("")
     @CommandPermission("ultracore.admin")
     public void onAdmin(Player player) {
-        AdminMenu menu = Main.getInstance().getMenuList().get("admin");
-        menu.init(player);
+        new AdminMenu(player).showTo(player);
     }
 
     @Subcommand("info|information")

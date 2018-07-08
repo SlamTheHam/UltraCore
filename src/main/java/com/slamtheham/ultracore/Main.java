@@ -7,7 +7,6 @@ import com.slamtheham.ultracore.config.Configs;
 import com.slamtheham.ultracore.listener.ListenerManager;
 import com.slamtheham.ultracore.listener.PlayerListener;
 import com.slamtheham.ultracore.menu.AdminMenu;
-import com.slamtheham.ultracore.menu.MenuList;
 import com.slamtheham.ultracore.utils.Updater;
 import me.blackness.black.Blackness;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,7 +19,6 @@ public class Main extends JavaPlugin {
     private ListenerManager listenerManager;
     private Configs configs;
     private Updater updater;
-    private MenuList menuList;
 
     @SuppressWarnings("unused")
     public void onEnable() {
@@ -30,7 +28,6 @@ public class Main extends JavaPlugin {
         configs = new Configs(this);
         updater = new Updater(this);
         new Blackness().prepareFor(this);
-        menuList = new MenuList(this);
         setupMenu();
         setupListeners();
         setupCommandManager();
@@ -57,7 +54,7 @@ public class Main extends JavaPlugin {
     }
 
     public void setupMenu() {
-        menuList.add("admin", new AdminMenu());
+
     }
 
     public void onDisable() {
@@ -90,9 +87,5 @@ public class Main extends JavaPlugin {
 
     public Updater getUpdater() {
         return updater;
-    }
-
-    public MenuList getMenuList() {
-        return menuList;
     }
 }
