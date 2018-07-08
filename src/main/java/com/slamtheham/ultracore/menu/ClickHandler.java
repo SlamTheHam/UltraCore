@@ -1,18 +1,14 @@
 package com.slamtheham.ultracore.menu;
 
+import me.blackness.black.Target;
 import me.blackness.black.event.ElementBasicEvent;
 import me.blackness.black.event.ElementClickEvent;
 import me.blackness.black.event.ElementDragEvent;
+import me.blackness.black.target.BasicTarget;
 
 public interface ClickHandler {
 
-    default void runBasic(ElementBasicEvent event) {
+    default Target[] get() {
+        return new Target[] {};
     }
-
-    default void runClick(ElementClickEvent event) {
-    }
-
-    default void runDrag(ElementDragEvent event) {
-    }
-
 }

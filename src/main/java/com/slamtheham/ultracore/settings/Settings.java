@@ -1,12 +1,15 @@
 package com.slamtheham.ultracore.settings;
 
+import com.slamtheham.ultracore.Main;
 import com.slamtheham.ultracore.settings.handlers.BooleanClickHandler;
 import com.slamtheham.ultracore.settings.listeners.PvpListener;
 import com.slamtheham.ultracore.utils.ItemManager;
 import me.blackness.black.element.BasicElement;
-import me.blackness.black.target.BasicTarget;
+import me.blackness.black.event.ElementClickEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,11 +21,22 @@ public class Settings {
     }
 
     public static final Setting PVP = new SettingBuilder().id("PVP")
-            .listener(new PvpListener()).clickHandler(
-                    new BooleanClickHandler("pvp.disable", "", "")
+            .listener(new PvpListener()).clickHandler((player, setting) ->
+                    new BooleanClickHandler("pvp.disable", setting) {
+                        @Override
+                        public void run(ElementClickEvent event, Setting setting, boolean status) {
+                            if (status) {
+                                event.player().sendMessage("True Message");
+                                setting.getListener().ifPresent(l -> Bukkit.getServer().getPluginManager().registerEvents(l, Main.getInstance()));
+                            } else {
+                                event.player().sendMessage("False Message");
+                                setting.getListener().ifPresent(HandlerList::unregisterAll);
+                            }
+                        }
+                    }
             ).elementHandler((player, setting) ->
                     new BasicElement(setting.getSettingItemHandler().get(player, setting),
-                            new BasicTarget(event -> setting.getClickHandler().runBasic(event)))
+                            setting.getSettingClickHandler().get())
             ).itemHandler((player, setting) ->
                     new ItemManager.ItemCreator(Material.PAPER).setName("&3&lDISABLE PVP").build()
             ).build();

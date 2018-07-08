@@ -1,6 +1,6 @@
 package com.slamtheham.ultracore.settings;
 
-import com.slamtheham.ultracore.menu.ClickHandler;
+import com.slamtheham.ultracore.settings.handlers.SettingClickHandler;
 import com.slamtheham.ultracore.settings.handlers.SettingElementHandler;
 import com.slamtheham.ultracore.settings.handlers.SettingItemHandler;
 import me.blackness.black.Element;
@@ -13,14 +13,14 @@ public class Setting implements Comparable<Setting> {
 
     private final String id;
     private final Listener listener;
-    private final ClickHandler clickHandler;
+    private final SettingClickHandler settingClickHandler;
     private final SettingElementHandler settingElementHandler;
     private final SettingItemHandler settingItemHandler;
 
-    public Setting(String id, Listener listener, ClickHandler clickHandler, SettingElementHandler settingElementHandler, SettingItemHandler settingItemHandler) {
+    public Setting(String id, Listener listener, SettingClickHandler settingClickHandler, SettingElementHandler settingElementHandler, SettingItemHandler settingItemHandler) {
         this.id = id;
         this.listener = listener;
-        this.clickHandler = clickHandler;
+        this.settingClickHandler = settingClickHandler;
         this.settingElementHandler = settingElementHandler;
         this.settingItemHandler = settingItemHandler;
     }
@@ -33,8 +33,8 @@ public class Setting implements Comparable<Setting> {
         return Optional.ofNullable(listener);
     }
 
-    public ClickHandler getClickHandler() {
-        return clickHandler;
+    public SettingClickHandler getSettingClickHandler() {
+        return settingClickHandler;
     }
 
     public SettingElementHandler getSettingElementHandler() {
@@ -73,7 +73,7 @@ public class Setting implements Comparable<Setting> {
 
     @Override
     public String toString() {
-        return "Setting [id=" + id + ", listener=" + listener + ", clickHandler=" + clickHandler + ", elementHandler=" + settingElementHandler + ", itemHandler=" + settingItemHandler + "]";
+        return "Setting [id=" + id + ", listener=" + listener + ", clickHandler=" + settingClickHandler + ", elementHandler=" + settingElementHandler + ", itemHandler=" + settingItemHandler + "]";
     }
 
     @Override

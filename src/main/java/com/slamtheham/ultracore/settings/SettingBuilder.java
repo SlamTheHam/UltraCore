@@ -1,6 +1,6 @@
 package com.slamtheham.ultracore.settings;
 
-import com.slamtheham.ultracore.menu.ClickHandler;
+import com.slamtheham.ultracore.settings.handlers.SettingClickHandler;
 import com.slamtheham.ultracore.settings.handlers.SettingElementHandler;
 import com.slamtheham.ultracore.settings.handlers.SettingItemHandler;
 import org.bukkit.event.Listener;
@@ -9,7 +9,7 @@ public class SettingBuilder {
 
     private String id;
     private Listener listener;
-    private ClickHandler clickHandler;
+    private SettingClickHandler settingClickHandler;
     private SettingElementHandler settingElementHandler;
     private SettingItemHandler settingItemHandler;
 
@@ -23,8 +23,8 @@ public class SettingBuilder {
         return this;
     }
 
-    public SettingBuilder clickHandler(ClickHandler clickHandler) {
-        this.clickHandler = clickHandler;
+    public SettingBuilder clickHandler(SettingClickHandler settingClickHandler) {
+        this.settingClickHandler = settingClickHandler;
         return this;
     }
 
@@ -39,8 +39,8 @@ public class SettingBuilder {
     }
 
     public Setting build() {
-        if (id == null || settingElementHandler == null || settingItemHandler == null) return null;
-        return new Setting(id, listener, clickHandler, settingElementHandler, settingItemHandler);
+        if (id == null || settingClickHandler == null ||  settingElementHandler == null || settingItemHandler == null) return null;
+        return new Setting(id, listener, settingClickHandler, settingElementHandler, settingItemHandler);
     }
 
 }
