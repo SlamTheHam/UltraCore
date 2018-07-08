@@ -22,7 +22,6 @@ public class PvpListener implements Listener {
         Entity damager = event.getDamager();
         Player hitter = null;
         Projectile arrow = null;
-        if (!plugin.getMainConfig().getConfig().getBoolean("pvp.disable")) return;
         if (!(entity instanceof Player)) return;
         final Player receiver = (Player) entity;
         if (damager instanceof Player) {
