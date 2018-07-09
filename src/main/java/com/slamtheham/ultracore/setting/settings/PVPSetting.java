@@ -33,11 +33,14 @@ public class PVPSetting extends Setting {
                         });
                     }
                 }),
-                ((player, setting) -> new BooleanClickHandler("pvp.disable", setting).setNameChange(true)),
+                ((player, setting) -> new BooleanClickHandler("pvp.disable", setting)
+                        .setNameChange(true)
+                        .setTrueMessage("True Message")
+                        .setFalseMessage("False Message")),
                 ((player, setting) -> new BasicElement(setting.getItemHandler().get(player, setting),
                         setting.getClickHandler().get(player, setting).get())),
                 ((player, setting) -> {
-                    BooleanClickHandler clickHandler = (BooleanClickHandler) setting.getClickHandler();
+                    BooleanClickHandler clickHandler = (BooleanClickHandler) setting.getClickHandler().get(player, setting);
                     String path = clickHandler.getPath();
                     String status = clickHandler.getPlugin().getMainConfig().getConfig().getBoolean(path) ? "&a&lTrue" : "&c&lFalse";
                     return new ItemManager.ItemCreator(Material.PAPER).setName(cc("&3&lDISABLE PVP &8: " + status)).build();

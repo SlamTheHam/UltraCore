@@ -2,6 +2,7 @@ package com.slamtheham.ultracore.setting.handlers;
 
 import com.slamtheham.ultracore.Main;
 import com.slamtheham.ultracore.menu.ClickHandler;
+import com.slamtheham.ultracore.menu.ConfigSettingsMenu;
 import com.slamtheham.ultracore.setting.Setting;
 import me.blackness.black.Target;
 import me.blackness.black.event.ElementBasicEvent;
@@ -12,7 +13,8 @@ import me.blackness.black.target.ClickTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.inventory.ClickType;
-import org.bukkit.inventory.ItemStack;
+
+import java.util.function.BiConsumer;
 
 import static com.slamtheham.ultracore.utils.StringUtils.cc;
 
@@ -23,6 +25,7 @@ public class BooleanClickHandler implements ClickHandler {
     private Setting setting;
     private String trueMessage;
     private String falseMessage;
+    private BiConsumer<Setting, Boolean> settingBiConsumer;
     private boolean nameChange;
 
     public BooleanClickHandler(String path, Setting setting) {
@@ -51,6 +54,10 @@ public class BooleanClickHandler implements ClickHandler {
         return falseMessage;
     }
 
+    public BiConsumer<Setting, Boolean> getSettingBiConsumer() {
+        return settingBiConsumer;
+    }
+
     public boolean isNameChange() {
         return nameChange;
     }
@@ -70,6 +77,11 @@ public class BooleanClickHandler implements ClickHandler {
         return this;
     }
 
+    public BooleanClickHandler setSettingBiConsumer(BiConsumer<Setting, Boolean> settingBiConsumer) {
+        this.settingBiConsumer = settingBiConsumer;
+        return this;
+    }
+
     @Override
     public Target[] get() {
         return new Target[]{
@@ -86,9 +98,9 @@ public class BooleanClickHandler implements ClickHandler {
                         if (falseMessage != null) e.player().sendMessage(cc(falseMessage));
                         setting.getListener().ifPresent(HandlerList::unregisterAll);
                     }
+                    if (settingBiConsumer != null) settingBiConsumer.accept(setting, change);
                     if (nameChange) {
-                        ItemStack item = setting.getItemHandler().get(e.player(), setting);
-                        e.currentItem().setItemMeta(item.getItemMeta());
+                        new ConfigSettingsMenu(e.player()).showTo(e.player());
                     }
                 }, new OrReq(new ClickTypeReq(ClickType.RIGHT), new ClickTypeReq(ClickType.LEFT))),
                 new BasicTarget(ElementBasicEvent::cancel)

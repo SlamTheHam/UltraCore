@@ -28,12 +28,12 @@ public class Main extends JavaPlugin {
         commandManager = new BukkitCommandManager(this);
         configs = new Configs(this);
         updater = new Updater(this);
-        settingsManager = new SettingsManager(this);
         new Blackness().prepareFor(this);
         setupMenu();
         setupListeners();
         setupCommandManager();
         setupConfigs();
+        settingsManager = new SettingsManager(this);
     }
 
     public void reload() {
