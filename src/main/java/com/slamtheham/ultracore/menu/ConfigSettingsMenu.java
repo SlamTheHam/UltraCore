@@ -20,9 +20,9 @@ public class ConfigSettingsMenu extends UltraMenu {
         Main.getInstance().getSettingsManager().getSettings().stream()
                 .sorted(Comparator.comparing(Setting::getId))
                 .forEach(setting -> {
-                    if (!addToLastPage(setting.toElement(player))) {
+                    if (!addToLastPane(setting.toElement(player))) {
                         addPane(new BasicPane(0, 0, 4, 9));
-                        addToLastPage(setting.toElement(player));
+                        addToLastPane(setting.toElement(player));
                     }
                 });
         buildChest();
