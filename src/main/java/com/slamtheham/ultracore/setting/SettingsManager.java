@@ -1,7 +1,6 @@
-package com.slamtheham.ultracore.settings;
+package com.slamtheham.ultracore.setting;
 
 import com.slamtheham.ultracore.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 
 import java.util.ArrayList;
@@ -24,12 +23,13 @@ public class SettingsManager {
         if (hasSetting(setting)) return false;
         settings.add(setting);
 
-        setting.getListener().ifPresent(l -> {
+        setting.getLoadHandler().run(setting, this);
+        /*setting.getListener().ifPresent(l -> {
             if (!registeredListeners.contains(l)) {
                 Bukkit.getServer().getPluginManager().registerEvents(l, plugin);
                 registeredListeners.add(l);
             }
-        });
+        });*/
         return true;
     }
 

@@ -1,6 +1,6 @@
-package com.slamtheham.ultracore.settings.handlers;
+package com.slamtheham.ultracore.setting.handlers;
 
-import com.slamtheham.ultracore.settings.Setting;
+import com.slamtheham.ultracore.setting.Setting;
 import me.blackness.black.Element;
 import org.bukkit.entity.Player;
 

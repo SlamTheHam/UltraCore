@@ -1,4 +1,4 @@
-package com.slamtheham.ultracore.settings.listeners;
+package com.slamtheham.ultracore.setting.listeners;
 
 import com.slamtheham.ultracore.Main;
 import org.bukkit.entity.Entity;

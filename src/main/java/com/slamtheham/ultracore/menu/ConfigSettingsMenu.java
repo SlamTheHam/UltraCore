@@ -1,7 +1,7 @@
 package com.slamtheham.ultracore.menu;
 
 import com.slamtheham.ultracore.Main;
-import com.slamtheham.ultracore.settings.Setting;
+import com.slamtheham.ultracore.setting.Setting;
 import me.blackness.black.pane.BasicPane;
 import org.bukkit.entity.Player;
 

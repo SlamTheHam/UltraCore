@@ -5,7 +5,7 @@ import com.slamtheham.ultracore.commands.MainCommand;
 import com.slamtheham.ultracore.config.Config;
 import com.slamtheham.ultracore.config.Configs;
 import com.slamtheham.ultracore.listener.ListenerManager;
-import com.slamtheham.ultracore.settings.SettingsManager;
+import com.slamtheham.ultracore.setting.SettingsManager;
 import com.slamtheham.ultracore.utils.Updater;
 import me.blackness.black.Blackness;
 import org.bukkit.plugin.java.JavaPlugin;
