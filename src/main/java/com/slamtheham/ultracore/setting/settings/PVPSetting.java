@@ -1,7 +1,9 @@
 package com.slamtheham.ultracore.setting.settings;
 
+import com.slamtheham.ultracore.menu.ClickHandler;
 import com.slamtheham.ultracore.setting.Setting;
 import com.slamtheham.ultracore.setting.handlers.BooleanClickHandler;
+import com.slamtheham.ultracore.setting.handlers.SettingClickHandler;
 import com.slamtheham.ultracore.setting.listeners.PvpListener;
 import com.slamtheham.ultracore.utils.ItemManager;
 import me.blackness.black.element.BasicElement;
@@ -15,9 +17,7 @@ public class PVPSetting extends Setting {
     public PVPSetting() {
         super("PVP", new PvpListener(),
                 ((setting, manager) -> {
-                    BooleanClickHandler clickHandler = (BooleanClickHandler) setting.getClickHandler();
-                    String path = clickHandler.getPath();
-                    boolean status = manager.getPlugin().getMainConfig().getConfig().getBoolean(path);
+                    boolean status = manager.getPlugin().getMainConfig().getConfig().getBoolean("pvp.disable");
                     if (status) {
                         setting.getListener().ifPresent(l -> {
                             if (!manager.getRegisteredListeners().contains(l)) {
