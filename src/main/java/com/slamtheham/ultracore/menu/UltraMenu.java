@@ -46,7 +46,7 @@ public abstract class UltraMenu {
         return panes.get(paneid).add(elements);
     }
 
-    public boolean addToLastPage(Element element) {
+    public boolean addToLastPane(Element element) {
         return panes.get(panes.size() - 1).add(element);
     }
 
