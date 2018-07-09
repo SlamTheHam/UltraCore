@@ -24,12 +24,6 @@ public class SettingsManager {
         settings.add(setting);
 
         setting.getLoadHandler().run(setting, this);
-        /*setting.getListener().ifPresent(l -> {
-            if (!registeredListeners.contains(l)) {
-                Bukkit.getServer().getPluginManager().registerEvents(l, plugin);
-                registeredListeners.add(l);
-            }
-        });*/
         return true;
     }
 
