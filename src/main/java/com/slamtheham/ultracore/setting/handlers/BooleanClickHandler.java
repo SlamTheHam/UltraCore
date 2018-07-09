@@ -12,6 +12,7 @@ import me.blackness.black.target.ClickTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.inventory.ClickType;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
@@ -90,11 +91,8 @@ public class BooleanClickHandler implements ClickHandler {
                         setting.getListener().ifPresent(HandlerList::unregisterAll);
                     }
                     if (nameChange) {
-                        ItemMeta meta = e.currentItem().getItemMeta();
-                        List<String> lore = new ArrayList<>();
-                        lore.add(cc("&a&l" + change));
-                        meta.setLore(lore);
-                        e.currentItem().setItemMeta(meta);
+                        ItemStack item = setting.getItemHandler().get(e.player(), setting);
+                        e.currentItem().setItemMeta(item.getItemMeta());
                     }
                 }, new OrReq(new ClickTypeReq(ClickType.RIGHT), new ClickTypeReq(ClickType.LEFT))),
                 new BasicTarget(ElementBasicEvent::cancel)
